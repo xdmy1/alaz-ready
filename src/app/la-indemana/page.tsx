@@ -11,48 +11,43 @@ const acts = [
 export default function LaIndemana() {
   return (
     <>
-      <section className="container-x pt-16 sm:pt-20">
-        <p className="eyebrow">Resurse</p>
-        <h1 className="mt-4 text-4xl font-semibold tracking-tight sm:text-5xl">Baza normativă și instrumente</h1>
-        <div className="mt-8 flex max-w-xl items-center gap-3 rounded-full border border-line px-4">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" className="text-muted"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
-          <input placeholder="Număr, titlu sau cuvânt-cheie…" className="h-12 flex-1 bg-transparent text-sm outline-none placeholder:text-muted" />
-        </div>
-        <div className="mt-8 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
-          {alwaysAtHand.map((t) => (
-            <div key={t.title} className="rounded-2xl border border-line p-5 transition hover:border-fg">
-              <p className="font-medium">{t.title}</p><p className="mt-1 text-sm text-muted">{t.desc}</p>
-            </div>
-          ))}
+      <section className="border-b border-line bg-bg-soft">
+        <div className="container-x py-12">
+          <p className="kicker">Întotdeauna la îndemână</p>
+          <h1 className="headline mt-3 text-4xl sm:text-5xl">Baza normativă și instrumente de lucru</h1>
+          <div className="mt-6 flex max-w-xl border border-line bg-bg">
+            <input placeholder="Număr, titlu sau cuvânt-cheie…" className="h-12 flex-1 bg-transparent px-4 text-sm outline-none placeholder:text-muted" />
+            <button className="btn-navy h-12">Caută</button>
+          </div>
         </div>
       </section>
-
-      <section className="container-x grid gap-12 py-14 lg:grid-cols-[1.4fr_1fr]">
+      <section className="container-x grid gap-12 py-10 lg:grid-cols-[260px_1fr_300px]">
+        <aside>
+          <div className="section-title"><h2>Secțiuni</h2></div>
+          <ul className="divide-y divide-line">{alwaysAtHand.map((t, i) => <li key={t} className={`py-3 text-[15px] ${i === 0 ? "font-bold text-brand" : ""}`}>{t}</li>)}</ul>
+        </aside>
         <div>
-          <h2 className="mb-2 text-2xl font-semibold tracking-tight">Acte actualizate recent</h2>
-          <ul className="divide-y divide-line border-y border-line">
+          <div className="section-title"><h2>Acte actualizate recent</h2></div>
+          <ul className="divide-y divide-line">
             {acts.map((l) => (
-              <li key={l.code} className="grid gap-1 py-4 sm:grid-cols-[170px_1fr] sm:gap-6">
-                <span className="font-mono text-xs text-muted">{l.code}</span>
-                <div><p className="text-sm font-medium">{l.title}</p><p className="text-xs text-muted">{l.date}</p></div>
+              <li key={l.code} className="grid gap-1 py-4 sm:grid-cols-[180px_1fr] sm:gap-6">
+                <span className="text-xs font-bold uppercase tracking-wider text-gold">{l.code}</span>
+                <div><p className="headline text-[17px]">{l.title}</p><p className="meta mt-1">{l.date}</p></div>
               </li>
             ))}
           </ul>
         </div>
-        <div>
-          <h2 className="mb-2 text-2xl font-semibold tracking-tight">Calendarul contribuabilului</h2>
-          <ul className="divide-y divide-line rounded-2xl border border-line">
+        <aside>
+          <div className="section-title"><h2>Calendarul contribuabilului</h2></div>
+          <ul className="divide-y divide-line">
             {calendar.map((c, i) => (
-              <li key={i} className="flex items-center gap-4 px-4 py-3.5">
-                <div className="w-12 shrink-0 text-center leading-none">
-                  <span className="block text-xl font-semibold tracking-tight">{c.day}</span>
-                  <span className="font-mono text-[10px] uppercase text-muted">{c.month}</span>
-                </div>
-                <div className="min-w-0"><p className="text-sm font-medium">{c.what}</p><p className="text-xs text-muted">{c.type}</p></div>
+              <li key={i} className="flex gap-4 py-3">
+                <div className="w-10 text-center leading-none"><span className="block font-serif text-2xl font-semibold text-brand">{c.day}</span><span className="text-[10px] font-bold uppercase text-muted">{c.month}</span></div>
+                <div className="min-w-0"><p className="text-sm font-medium leading-snug">{c.what}</p><p className="meta mt-0.5 uppercase tracking-wider">{c.type}</p></div>
               </li>
             ))}
           </ul>
-        </div>
+        </aside>
       </section>
     </>
   );
