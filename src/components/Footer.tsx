@@ -3,7 +3,7 @@ import Logo from "./Logo";
 
 const cols = [
   { title: "Revista", items: ["Numărul curent", "Arhiva", "Rubrici", "Consultant+", "Noutăți"] },
-  { title: "La îndemână", items: ["Baza normativă", "Codul fiscal", "Planul de conturi", "SNC", "Calendarul contribuabilului"] },
+  { title: "Resurse", items: ["Baza normativă", "Codul fiscal", "Planul de conturi", "SNC", "Calendarul contribuabilului"] },
   { title: "Editura", items: ["Despre ediție", "Redacția revistei", "Autorii noștri", "Abonarea", "Contacte"] },
 ];
 

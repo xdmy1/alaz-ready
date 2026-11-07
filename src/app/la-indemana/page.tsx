@@ -12,7 +12,7 @@ export default function LaIndemana() {
   return (
     <>
       <section className="container-x pt-16 sm:pt-20">
-        <p className="eyebrow">Întotdeauna la îndemână</p>
+        <p className="eyebrow">Resurse</p>
         <h1 className="mt-4 text-4xl font-semibold tracking-tight sm:text-5xl">Baza normativă și instrumente</h1>
         <div className="mt-8 flex max-w-xl items-center gap-3 rounded-full border border-line px-4">
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" className="text-muted"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>

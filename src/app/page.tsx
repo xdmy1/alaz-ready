@@ -104,7 +104,7 @@ export default function Home() {
       {/* Întotdeauna la îndemână */}
       <section className="border-y border-line bg-bg-soft">
         <div className="container-x py-14">
-          <p className="eyebrow">Întotdeauna la îndemână</p>
+          <p className="eyebrow">Resurse</p>
           <h2 className="mt-2 text-2xl font-semibold tracking-tight">Instrumente de lucru</h2>
           <div className="mt-8 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
             {alwaysAtHand.map((t) => (
@@ -124,7 +124,7 @@ export default function Home() {
           <Link href="/revista#rubrici" className="link-quiet text-sm">Toate rubricile →</Link>
         </div>
         <div className="flex flex-wrap gap-2">
-          {rubrics.map((r) => (
+          {rubrics.slice(0, 8).map((r) => (
             <Link key={r} href="/revista#rubrici" className="rounded-full border border-line px-3.5 py-1.5 text-sm text-muted transition hover:border-fg hover:text-fg">{r}</Link>
           ))}
         </div>

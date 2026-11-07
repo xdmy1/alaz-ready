@@ -8,16 +8,10 @@ import ThemeToggle from "./ThemeToggle";
 type Item = { href: string; label: string; children?: { href: string; label: string }[] };
 
 const links: Item[] = [
-  { href: "/revista", label: "Revista", children: [
-    { href: "/revista", label: "Numărul curent" }, { href: "/revista#arhiva", label: "Arhiva" }, { href: "/revista#rubrici", label: "Rubrici" },
-  ] },
-  { href: "/consultant", label: "Consultant+" },
+  { href: "/revista", label: "Revista" },
   { href: "/noutati", label: "Noutăți" },
+  { href: "/la-indemana", label: "Resurse" },
   { href: "/abonarea", label: "Abonarea" },
-  { href: "/la-indemana", label: "La îndemână", children: [
-    { href: "/la-indemana", label: "Baza normativă" }, { href: "/la-indemana", label: "Codul fiscal" }, { href: "/la-indemana", label: "Planul de conturi" },
-    { href: "/la-indemana", label: "SNC" }, { href: "/la-indemana", label: "Documente primare" }, { href: "/la-indemana", label: "Indicatorii fiscali" }, { href: "/la-indemana", label: "Calendarul contribuabilului" },
-  ] },
 ];
 
 const Search = () => (
