@@ -8,3 +8,5 @@ npm run dev
 ```
 
 Pagini: `/`, `/noutati`, `/noutati/[slug]`, `/consultant`, `/revista`, `/abonarea`, `/la-indemana`, `/cont`.
+
+Deploy: Vercel, din branch-ul `main`.
