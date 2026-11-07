@@ -6,8 +6,8 @@ import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
-  title: "contabilitate.md — concept redesign",
-  description: "Concept de redesign pentru portalul contabilitate.md",
+  title: "Contabilitate și audit — concept redesign",
+  description: "Concept de redesign pentru contabilitate.md, revista Contabilitate și audit",
 };
 
 const themeScript = `(function(){try{var t=localStorage.getItem('theme');var d=t?t==='dark':matchMedia('(prefers-color-scheme: dark)').matches;if(d)document.documentElement.classList.add('dark')}catch(e){}})();`;

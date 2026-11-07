@@ -7,4 +7,4 @@ npm install
 npm run dev
 ```
 
-Pagini: `/`, `/noutati`, `/noutati/[slug]`, `/abonamente`, `/legislatie`, `/revista`, `/seminare`, `/cont`.
+Pagini: `/`, `/noutati`, `/noutati/[slug]`, `/consultant`, `/revista`, `/abonarea`, `/la-indemana`, `/cont`.
