@@ -9,7 +9,7 @@ export default function Home() {
     <>
       {/* Hero: fără banner de sus, fără carusel, fără curs valutar. Newsletter-ul urcă aici. */}
       <section className="container-x pb-12 pt-16 sm:pt-24">
-        <p className="eyebrow">Revista contabililor profesioniști · din 1995</p>
+        <p className="eyebrow">Revista contabililor · din 1995</p>
         <h1 className="mt-4 max-w-3xl text-4xl font-semibold leading-[1.05] tracking-tight sm:text-6xl">
           Contabilitate și audit, <span className="text-muted">explicate de practicieni.</span>
         </h1>
@@ -49,8 +49,8 @@ export default function Home() {
       </section>
 
       {/* Numărul curent + Calendarul contribuabilului */}
-      <section className="container-x grid gap-12 py-14 lg:grid-cols-2">
-        <div className="flex gap-6">
+      <section className="container-x grid gap-12 py-14 lg:grid-cols-2 [&>*]:min-w-0">
+        <div className="flex min-w-0 flex-col gap-6 sm:flex-row">
           <div className="flex aspect-[3/4] w-36 shrink-0 flex-col justify-between rounded-xl border border-line bg-bg-soft p-4 sm:w-44">
             <span className="font-mono text-[10px] uppercase tracking-wider text-muted">{issue.number}</span>
             <span className="text-2xl font-semibold leading-none tracking-tight">C<span className="text-accent">&</span>A</span>

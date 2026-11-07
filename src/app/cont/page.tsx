@@ -1,9 +1,9 @@
-import { Mark } from "@/components/Logo";
+import { Wordmark } from "@/components/Logo";
 export default function Cont() {
   return (
     <section className="container-x flex justify-center py-20">
       <div className="w-full max-w-sm">
-        <Mark className="h-9 w-9" />
+        <div className="text-brand-deep"><Wordmark className="h-10 w-auto" /></div>
         <h1 className="mt-6 text-2xl font-semibold tracking-tight">Intră în cont</h1>
         <div className="mt-6 space-y-3">
           <input placeholder="Email" className="h-11 w-full rounded-xl border border-line bg-bg px-4 text-sm outline-none focus:border-fg" />
