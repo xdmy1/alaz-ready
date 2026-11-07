@@ -16,7 +16,7 @@ export default function Revista() {
           <ul className="mt-6 space-y-2 text-sm">
             {issue.contents.map((c) => <li key={c} className="flex gap-3"><span className="text-muted">—</span>{c}</li>)}
           </ul>
-          <button className="mt-7 rounded-full bg-fg px-5 py-2.5 text-sm font-medium text-bg">Citește numărul</button>
+          <button className="mt-7 btn-primary px-5 py-2.5 text-sm">Citește numărul</button>
         </div>
       </section>
 

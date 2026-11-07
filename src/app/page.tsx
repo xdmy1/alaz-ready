@@ -62,7 +62,7 @@ export default function Home() {
               {issue.contents.map((c) => <li key={c} className="truncate">— {c}</li>)}
             </ul>
             <div className="mt-6 flex gap-2">
-              <Link href="/revista" className="rounded-full bg-fg px-4 py-2 text-sm font-medium text-bg">Citește numărul</Link>
+              <Link href="/revista" className="btn-primary px-4 py-2 text-sm">Citește numărul</Link>
               <Link href="/revista#arhiva" className="rounded-full border border-line px-4 py-2 text-sm transition hover:border-fg">Arhiva</Link>
             </div>
           </div>
@@ -132,15 +132,15 @@ export default function Home() {
 
       {/* Abonarea 2027 */}
       <section className="container-x pb-20">
-        <div className="grid items-center gap-10 rounded-3xl bg-fg px-8 py-12 text-bg sm:px-12 lg:grid-cols-[1fr_auto]">
+        <div className="grid items-center gap-10 rounded-3xl bg-brand-deep px-8 py-12 text-white sm:px-12 lg:grid-cols-[1fr_auto]">
           <div>
             <p className="font-mono text-[11px] uppercase tracking-[0.14em] opacity-60">Abonarea pentru 2027</p>
             <h2 className="mt-3 max-w-lg text-3xl font-semibold tracking-tight">Revista, arhiva și Consultant+. De la 2 988 lei pe an.</h2>
             <p className="mt-3 max-w-md text-sm opacity-70">Print, Digital sau Platinum. Plus 10% reducere la seminarele Contabil-Service.</p>
           </div>
           <div className="flex flex-wrap gap-3">
-            <Link href="/abonarea" className="rounded-full bg-bg px-5 py-2.5 text-sm font-medium text-fg transition hover:opacity-90">Vezi pachetele</Link>
-            <Link href="/revista" className="rounded-full border border-bg/30 px-5 py-2.5 text-sm transition hover:border-bg">Răsfoiește revista</Link>
+            <Link href="/abonarea" className="btn-primary px-5 py-2.5 text-sm">Vezi pachetele</Link>
+            <Link href="/revista" className="rounded-full border border-white/30 px-5 py-2.5 text-sm transition hover:border-white">Răsfoiește revista</Link>
           </div>
         </div>
       </section>

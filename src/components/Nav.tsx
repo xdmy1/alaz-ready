@@ -24,16 +24,16 @@ export default function Nav() {
   const [search, setSearch] = useState(false);
 
   return (
-    <header className="sticky top-0 z-40 border-b border-line bg-bg/85 backdrop-blur-md">
+    <header className="sticky top-0 z-40 bg-brand-deep text-white">
       <div className="container-x flex h-16 items-center justify-between gap-6">
-        <Logo />
+        <Logo onDark />
 
         <nav className="hidden items-center gap-0.5 md:flex">
           {links.map((l) => {
             const active = path === l.href || path.startsWith(l.href + "/");
             return (
               <div key={l.href} className="group relative">
-                <Link href={l.href} className={`flex items-center gap-1 rounded-full px-3.5 py-1.5 text-sm transition ${active ? "bg-bg-soft text-fg" : "text-muted hover:text-fg"}`}>
+                <Link href={l.href} className={`flex items-center gap-1 rounded-full px-3.5 py-1.5 text-sm transition ${active ? "bg-white/10 text-white" : "text-white/70 hover:text-white"}`}>
                   {l.label}
                   {l.children && <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" className="opacity-60"><path d="m6 9 6 6 6-6"/></svg>}
                 </Link>
@@ -52,30 +52,30 @@ export default function Nav() {
         </nav>
 
         <div className="flex items-center gap-0.5">
-          <button onClick={() => setSearch(true)} aria-label="Caută" className="grid h-9 w-9 place-items-center rounded-full text-muted transition hover:bg-bg-soft hover:text-fg"><Search /></button>
+          <button onClick={() => setSearch(true)} aria-label="Caută" className="grid h-9 w-9 place-items-center rounded-full text-white/70 transition hover:bg-white/10 hover:text-white"><Search /></button>
           <ThemeToggle />
-          <button className="hidden h-9 rounded-full px-2.5 font-mono text-[11px] uppercase tracking-wider text-muted transition hover:text-fg lg:block">Ro · Ru</button>
-          <Link href="/cont" className="hidden rounded-full px-3.5 py-1.5 text-sm text-muted transition hover:text-fg sm:block">Cabinet</Link>
-          <Link href="/abonarea" className="ml-1 hidden rounded-full bg-fg px-4 py-2 text-sm font-medium text-bg transition hover:opacity-85 sm:block">Abonează-te</Link>
-          <button onClick={() => setOpen(!open)} aria-label="Meniu" className="grid h-9 w-9 place-items-center rounded-full text-fg md:hidden">
+          <button className="hidden h-9 rounded-full px-2.5 font-mono text-[11px] uppercase tracking-wider text-white/70 transition hover:text-white lg:block">Ro · Ru</button>
+          <Link href="/cont" className="hidden rounded-full px-3.5 py-1.5 text-sm text-white/70 transition hover:text-white sm:block">Cabinet</Link>
+          <Link href="/abonarea" className="ml-1 hidden btn-primary px-4 py-2 text-sm sm:block">Abonează-te</Link>
+          <button onClick={() => setOpen(!open)} aria-label="Meniu" className="grid h-9 w-9 place-items-center rounded-full text-white md:hidden">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round">{open ? <path d="M6 6l12 12M18 6 6 18"/> : <path d="M4 7h16M4 12h16M4 17h16"/>}</svg>
           </button>
         </div>
       </div>
 
       {open && (
-        <div className="border-t border-line bg-bg md:hidden">
+        <div className="border-t border-white/10 bg-brand-deep md:hidden">
           <div className="container-x flex flex-col py-3">
             {links.map((l) => (
-              <Link key={l.href} href={l.href} onClick={() => setOpen(false)} className="py-3 text-base text-fg">{l.label}</Link>
+              <Link key={l.href} href={l.href} onClick={() => setOpen(false)} className="py-3 text-base text-white">{l.label}</Link>
             ))}
-            <Link href="/abonarea" className="mt-2 rounded-full bg-fg px-4 py-2.5 text-center text-sm font-medium text-bg">Abonează-te</Link>
+            <Link href="/abonarea" className="mt-2 btn-primary px-4 py-2.5 text-center text-sm">Abonează-te</Link>
           </div>
         </div>
       )}
 
       {search && (
-        <div className="fixed inset-0 z-50 bg-fg/40 p-4 backdrop-blur-sm sm:p-10" onClick={() => setSearch(false)}>
+        <div className="fixed inset-0 z-50 bg-brand-deep/60 p-4 backdrop-blur-sm sm:p-10" onClick={() => setSearch(false)}>
           <div className="mx-auto mt-10 max-w-xl overflow-hidden rounded-2xl border border-line bg-bg shadow-2xl" onClick={(e) => e.stopPropagation()}>
             <div className="flex items-center gap-3 px-4 text-muted">
               <Search />

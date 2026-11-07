@@ -27,7 +27,7 @@ export default async function Articol({ params }: { params: Promise<{ slug: stri
           <p>Textul de mai jos este un exemplu de machetă pentru pagina de articol. Scopul este să arate ritmul tipografic, lățimea coloanei de citit și felul în care sunt marcate citatele din acte normative.</p>
           <h2 className="text-2xl font-semibold tracking-tight">Cadrul normativ</h2>
           <p>Pentru majoritatea entităților, schimbarea se resimte în primul trimestru. Recomandăm o reconciliere a cifrei de afaceri pe ultimele 12 luni consecutive, nu pe anul calendaristic.</p>
-          <blockquote className="border-l-2 border-accent pl-5 text-muted">„Înregistrarea tardivă atrage calcularea TVA din propria marjă, nu de la client.” — Codul fiscal, art. 112</blockquote>
+          <blockquote className="border-l-2 border-brand pl-5 text-muted">„Înregistrarea tardivă atrage calcularea TVA din propria marjă, nu de la client.” — Codul fiscal, art. 112</blockquote>
           <p>În continuare parcurgem trei scenarii practice: comerț cu amănuntul, servicii exportate și intermediere.</p>
         </div>
 
@@ -36,7 +36,7 @@ export default async function Articol({ params }: { params: Promise<{ slug: stri
             <p className="eyebrow">Material pentru abonați</p>
             <h3 className="mt-3 text-xl font-semibold tracking-tight">Continuarea este disponibilă în orice pachet de abonare</h3>
             <div className="mt-5 flex justify-center gap-2">
-              <Link href="/abonarea" className="rounded-full bg-fg px-5 py-2.5 text-sm font-medium text-bg">Vezi pachetele</Link>
+              <Link href="/abonarea" className="btn-primary px-5 py-2.5 text-sm">Vezi pachetele</Link>
               <Link href="/cont" className="rounded-full border border-line px-5 py-2.5 text-sm transition hover:border-fg">Am cont</Link>
             </div>
           </div>

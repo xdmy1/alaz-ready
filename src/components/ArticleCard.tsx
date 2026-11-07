@@ -4,7 +4,7 @@ import type { Article } from "@/data/content";
 export function Meta({ a }: { a: Article }) {
   return (
     <div className="flex flex-wrap items-center gap-x-2 gap-y-1 text-xs text-muted">
-      <span className="font-medium text-accent">{a.rubric}</span>
+      <span className="font-medium text-brand">{a.rubric}</span>
       <span>·</span><span>{a.date}</span><span>·</span><span>{a.read}</span>
       {a.premium && <span className="ml-1 rounded-full border border-line px-1.5 py-px font-mono text-[10px] uppercase tracking-wider">Abonați</span>}
     </div>
@@ -13,7 +13,7 @@ export function Meta({ a }: { a: Article }) {
 
 const Art = ({ seed }: { seed: number }) => (
   <div className="h-full w-full transition-transform duration-500 group-hover:scale-[1.03]"
-    style={{ background: `radial-gradient(ellipse at ${20 + (seed * 37) % 60}% ${10 + (seed * 53) % 70}%, color-mix(in oklab, var(--accent) 26%, transparent), transparent 62%)` }} />
+    style={{ background: `radial-gradient(ellipse at ${20 + (seed * 37) % 60}% ${10 + (seed * 53) % 70}%, color-mix(in oklab, var(--brand) 26%, transparent), transparent 62%)` }} />
 );
 
 export default function ArticleCard({ a, size = "md" }: { a: Article; size?: "md" | "lg" }) {
@@ -45,7 +45,7 @@ export function QuestionCard({ a }: { a: Article }) {
     <Link href={`/noutati/${a.slug}`} className="group flex flex-col rounded-2xl border border-line p-6 transition hover:border-fg">
       <span className="font-mono text-[11px] text-muted">{a.date}</span>
       <h3 className="mt-3 flex-1 text-[17px] font-medium leading-snug tracking-tight">{a.title}</h3>
-      <span className="mt-5 text-sm text-accent">Citește răspunsul →</span>
+      <span className="mt-5 text-sm text-brand">Citește răspunsul →</span>
     </Link>
   );
 }

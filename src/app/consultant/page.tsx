@@ -10,7 +10,7 @@ export default function Consultant() {
         <p className="mt-4 max-w-xl text-muted">Articole operative, publicate între numerele revistei, plus traduceri rom.–rus. ale materialelor de bază. Disponibile abonaților.</p>
         <div className="mt-8 flex flex-wrap gap-2">
           {["Toate", "TVA", "Impozit pe venit", "Salarizare", "Documente primare", "Audit"].map((c, i) => (
-            <button key={c} className={`rounded-full border px-3.5 py-1.5 text-sm transition ${i === 0 ? "border-fg bg-fg text-bg" : "border-line text-muted hover:border-fg hover:text-fg"}`}>{c}</button>
+            <button key={c} className={`rounded-full border px-3.5 py-1.5 text-sm transition ${i === 0 ? "border-brand-deep bg-brand-deep text-white" : "border-line text-muted hover:border-fg hover:text-fg"}`}>{c}</button>
           ))}
         </div>
       </section>
