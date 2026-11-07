@@ -2,30 +2,31 @@ import { plans } from "@/data/content";
 
 export default function Pricing() {
   return (
-    <section className="container-x py-12">
-      <div className="grid gap-4 lg:grid-cols-3">
-        {plans.map((p) => (
-          <div key={p.name} className={`relative flex flex-col rounded-3xl border p-7 ${p.featured ? "border-fg bg-fg text-bg" : "border-line bg-bg"}`}>
-            {p.featured && <span className="absolute right-6 top-6 rounded-full bg-accent px-2.5 py-1 font-mono text-[10px] uppercase tracking-wider text-accent-fg">Cel mai ales</span>}
-            <p className="text-sm font-medium">{p.name}</p>
-            <p className={`mt-1 min-h-10 text-sm ${p.featured ? "opacity-70" : "text-muted"}`}>{p.desc}</p>
-            <div className="mt-6 flex items-baseline gap-1.5">
-              <span className="text-4xl font-semibold tracking-tight">{p.price.toLocaleString("ro-RO")}</span>
-              <span className={`text-sm ${p.featured ? "opacity-70" : "text-muted"}`}>MDL / an</span>
+    <div className="grid gap-6 lg:grid-cols-3 lg:gap-0 lg:divide-x lg:divide-line lg:border lg:border-line">
+      {plans.map((p) => (
+        <div key={p.name} className={`flex flex-col border border-line lg:border-0 ${p.featured ? "bg-brand-deep text-white lg:-my-4 lg:py-4" : ""}`}>
+          <div className={`border-b-4 px-7 pt-7 pb-5 ${p.featured ? "border-accent" : "border-gold"}`}>
+            <div className="flex items-center justify-between">
+              <p className="text-[13px] font-bold uppercase tracking-[0.12em]">{p.name}</p>
+              {p.featured && <span className="bg-accent px-2 py-0.5 text-[10px] font-bold uppercase tracking-wider text-accent-fg">Cel mai ales</span>}
             </div>
-            <ul className={`mt-7 flex-1 space-y-3 text-sm ${p.featured ? "opacity-90" : ""}`}>
-              {p.features.map((f) => (
-                <li key={f} className="flex gap-3">
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" className="mt-0.5 shrink-0 text-accent"><path d="m5 12 5 5L20 7"/></svg>
-                  {f}
-                </li>
-              ))}
-            </ul>
-            <button className={`mt-8 h-11 rounded-full text-sm font-medium transition ${p.featured ? "bg-bg text-fg hover:opacity-90" : "border border-line hover:border-fg"}`}>Obține factura</button>
+            <p className={`mt-1 text-sm ${p.featured ? "text-white/70" : "text-muted"}`}>{p.desc}</p>
+            <p className="mt-6 font-serif"><span className="text-5xl font-semibold">{p.price.toLocaleString("ro-RO")}</span> <span className={`text-base ${p.featured ? "text-white/70" : "text-muted"}`}>MDL / 12 luni</span></p>
           </div>
-        ))}
-      </div>
-      <p className="mt-6 text-center text-xs text-muted">Prețurile includ TVA. Factura se emite pe datele companiei.</p>
-    </section>
+          <ul className="flex-1 space-y-3 px-7 py-6 text-[15px]">
+            {p.features.map((f) => (
+              <li key={f} className="flex gap-3">
+                <span className={`mt-[3px] h-4 w-4 shrink-0 ${p.featured ? "text-accent" : "text-brand"}`}>
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"><path d="m5 12 5 5L20 7"/></svg>
+                </span>{f}
+              </li>
+            ))}
+          </ul>
+          <div className="px-7 pb-7">
+            <button className={`${p.featured ? "btn-yellow" : "btn-outline"} h-12 w-full`}>Obține factura</button>
+          </div>
+        </div>
+      ))}
+    </div>
   );
 }

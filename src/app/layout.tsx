@@ -15,9 +15,7 @@ const themeScript = `(function(){try{var t=localStorage.getItem('theme');var d=t
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="ro" className={`${GeistSans.variable} ${GeistMono.variable} h-full antialiased`} suppressHydrationWarning>
-      <head>
-        <script dangerouslySetInnerHTML={{ __html: themeScript }} />
-      </head>
+      <head><script dangerouslySetInnerHTML={{ __html: themeScript }} /></head>
       <body className="flex min-h-full flex-col font-sans">
         <Nav />
         <main className="flex-1">{children}</main>

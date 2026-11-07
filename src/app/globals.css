@@ -1,25 +1,32 @@
 @import "tailwindcss";
+@import "@fontsource-variable/source-serif-4/opsz.css";
 
 @custom-variant dark (&:where(.dark, .dark *));
 
+/* Paleta site-ului: bleumarin #10152c / #244265, galben #eac435, auriu #be9546 */
 :root {
   --bg: #ffffff;
-  --bg-soft: #f6f6f4;
-  --fg: #111110;
-  --muted: #6b6b66;
-  --line: #e6e6e2;
-  --accent: #0f766e;
-  --accent-fg: #ffffff;
+  --bg-soft: #f3f4f6;
+  --fg: #10152c;
+  --muted: #5b627a;
+  --line: #d9dbe3;
+  --brand: #244265;
+  --brand-deep: #10152c;
+  --accent: #eac435;
+  --accent-fg: #10152c;
+  --gold: #be9546;
 }
-
 .dark {
-  --bg: #0b0b0b;
-  --bg-soft: #141414;
-  --fg: #f2f2ee;
-  --muted: #9a9a93;
-  --line: #262626;
-  --accent: #2dd4bf;
-  --accent-fg: #06201d;
+  --bg: #10152c;
+  --bg-soft: #171d38;
+  --fg: #f4f5f9;
+  --muted: #a5abc2;
+  --line: #2a3357;
+  --brand: #eac435;
+  --brand-deep: #0a0e20;
+  --accent: #eac435;
+  --accent-fg: #10152c;
+  --gold: #d7b45a;
 }
 
 @theme inline {
@@ -28,21 +35,37 @@
   --color-fg: var(--fg);
   --color-muted: var(--muted);
   --color-line: var(--line);
+  --color-brand: var(--brand);
+  --color-brand-deep: var(--brand-deep);
   --color-accent: var(--accent);
   --color-accent-fg: var(--accent-fg);
+  --color-gold: var(--gold);
   --font-sans: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;
+  --font-serif: "Source Serif 4 Variable", Georgia, "Times New Roman", serif;
   --font-mono: var(--font-geist-mono), ui-monospace, monospace;
 }
 
 html { color-scheme: light; }
 html.dark { color-scheme: dark; }
+body { background: var(--bg); color: var(--fg); }
 
-body {
-  background: var(--bg);
-  color: var(--fg);
-  font-feature-settings: "ss01", "cv11";
-}
+.container-x { @apply mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8; }
 
-.container-x { @apply mx-auto w-full max-w-6xl px-5 sm:px-8; }
-.eyebrow { @apply font-mono text-[11px] uppercase tracking-[0.14em] text-muted; }
+/* Titlu de secțiune ca pe site: majuscule bold + linie aurie */
+.section-title { @apply flex items-baseline justify-between gap-4 border-b-2 border-gold pb-2; }
+.section-title h2 { @apply font-sans text-[13px] font-bold uppercase tracking-[0.12em] text-brand; }
+.section-title a { @apply text-xs text-muted hover:text-fg; }
+
+.headline { @apply font-serif font-semibold leading-[1.12] tracking-[-0.01em]; }
+.kicker { @apply text-[11px] font-bold uppercase tracking-[0.1em] text-brand; }
+.meta { @apply text-xs text-muted; }
+
+.btn { @apply inline-flex h-10 items-center justify-center px-4 text-[13px] font-bold uppercase tracking-[0.08em] transition; }
+.btn-yellow { @apply inline-flex h-10 items-center justify-center px-4 text-[13px] font-bold uppercase tracking-[0.08em] transition bg-accent text-accent-fg hover:brightness-95; }
+.btn-navy { @apply inline-flex h-10 items-center justify-center px-4 text-[13px] font-bold uppercase tracking-[0.08em] transition bg-brand-deep text-white hover:bg-brand; }
+.btn-outline { @apply inline-flex h-10 items-center justify-center px-4 text-[13px] font-bold uppercase tracking-[0.08em] transition border border-fg text-fg hover:bg-fg hover:text-bg; }
+.dark .btn-outline:hover { color: var(--bg); }
+
 .link-quiet { @apply text-muted transition-colors hover:text-fg; }
+.photo { @apply relative overflow-hidden bg-bg-soft; }
+.photo img { @apply h-full w-full object-cover; }

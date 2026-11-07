@@ -1,22 +1,22 @@
-import ArticleCard from "@/components/ArticleCard";
+import { Card, Lead } from "@/components/ArticleCard";
+import Newsletter from "@/components/Newsletter";
 import { news, mostRead } from "@/data/content";
 
 export default function Noutati() {
-  const all = [...news, ...mostRead];
+  const [lead, ...rest] = [...news, ...mostRead];
   return (
-    <>
-      <section className="container-x pt-16 sm:pt-20">
-        <p className="eyebrow">Noutăți</p>
-        <h1 className="mt-4 text-4xl font-semibold tracking-tight sm:text-5xl">Fluxul de știri</h1>
-        <div className="mt-8 flex flex-wrap gap-2">
+    <section className="container-x grid gap-12 py-10 lg:grid-cols-[1fr_300px]">
+      <div>
+        <div className="section-title"><h2>Noutăți · Fluxul de știri</h2></div>
+        <div className="mt-6 flex flex-wrap gap-2">
           {["Toate", "Fiscal", "Legislație", "SFS", "CNAS / CNAM", "Economie"].map((c, i) => (
-            <button key={c} className={`rounded-full border px-3.5 py-1.5 text-sm transition ${i === 0 ? "border-fg bg-fg text-bg" : "border-line text-muted hover:border-fg hover:text-fg"}`}>{c}</button>
+            <button key={c} className={`h-8 border px-3 text-[12px] font-bold uppercase tracking-wider ${i === 0 ? "border-brand-deep bg-brand-deep text-white" : "border-line text-muted hover:border-fg hover:text-fg"}`}>{c}</button>
           ))}
         </div>
-      </section>
-      <section className="container-x grid gap-x-8 gap-y-12 py-14 sm:grid-cols-2 lg:grid-cols-3">
-        {all.map((a) => <ArticleCard key={a.slug} a={a} />)}
-      </section>
-    </>
+        <div className="mt-8"><Lead a={lead} /></div>
+        <div className="mt-10 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">{rest.map((a) => <Card key={a.slug} a={a} />)}</div>
+      </div>
+      <aside><Newsletter /></aside>
+    </section>
   );
 }

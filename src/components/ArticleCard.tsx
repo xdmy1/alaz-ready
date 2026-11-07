@@ -1,51 +1,77 @@
 import Link from "next/link";
 import type { Article } from "@/data/content";
 
-export function Meta({ a }: { a: Article }) {
+/* eslint-disable @next/next/no-img-element */
+
+export function Meta({ a, light = false }: { a: Article; light?: boolean }) {
   return (
-    <div className="flex flex-wrap items-center gap-x-2 gap-y-1 text-xs text-muted">
-      <span className="font-medium text-accent">{a.rubric}</span>
-      <span>·</span><span>{a.date}</span><span>·</span><span>{a.read}</span>
-      {a.premium && <span className="ml-1 rounded-full border border-line px-1.5 py-px font-mono text-[10px] uppercase tracking-wider">Abonați</span>}
-    </div>
+    <p className={`meta ${light ? "text-white/70" : ""}`}>
+      <span className={`font-bold uppercase tracking-[0.08em] ${light ? "text-accent" : "text-brand"}`}>{a.rubric}</span>
+      <span className="mx-1.5">·</span>{a.date}
+      {a.premium && <span className={`ml-2 border px-1 py-px text-[9px] font-bold uppercase tracking-wider ${light ? "border-white/40" : "border-gold text-gold"}`}>Abonați</span>}
+    </p>
   );
 }
 
-const Art = ({ seed }: { seed: number }) => (
-  <div className="h-full w-full transition-transform duration-500 group-hover:scale-[1.03]"
-    style={{ background: `radial-gradient(ellipse at ${20 + (seed * 37) % 60}% ${10 + (seed * 53) % 70}%, color-mix(in oklab, var(--accent) 26%, transparent), transparent 62%)` }} />
-);
-
-export default function ArticleCard({ a, size = "md" }: { a: Article; size?: "md" | "lg" }) {
-  const lg = size === "lg";
+export function Lead({ a }: { a: Article }) {
   return (
     <Link href={`/noutati/${a.slug}`} className="group block">
-      <div className={`mb-4 w-full overflow-hidden rounded-2xl bg-bg-soft ${lg ? "aspect-[16/9]" : "aspect-[3/2]"}`}><Art seed={a.title.length} /></div>
-      <Meta a={a} />
-      <h3 className={`mt-2 font-semibold leading-snug tracking-tight decoration-line underline-offset-4 group-hover:underline ${lg ? "text-2xl sm:text-3xl" : "text-lg"}`}>{a.title}</h3>
-      {a.excerpt && <p className={`mt-2 leading-relaxed text-muted ${lg ? "text-base" : "text-sm"}`}>{a.excerpt}</p>}
-    </Link>
-  );
-}
-
-export function ArticleRow({ a, thumb = true }: { a: Article; thumb?: boolean }) {
-  return (
-    <Link href={`/noutati/${a.slug}`} className="group flex gap-5 border-t border-line py-5 first:border-t-0">
-      {thumb && <div className="hidden h-20 w-28 shrink-0 overflow-hidden rounded-xl bg-bg-soft sm:block"><Art seed={a.title.length + 3} /></div>}
-      <div className="min-w-0">
+      <div className="photo aspect-[16/9]"><img src={a.img} alt="" /></div>
+      <div className="pt-4">
         <Meta a={a} />
-        <h3 className="mt-1.5 font-medium leading-snug tracking-tight decoration-line underline-offset-4 group-hover:underline">{a.title}</h3>
+        <h2 className="headline mt-2 text-[28px] group-hover:underline sm:text-[34px]">{a.title}</h2>
+        <p className="mt-3 max-w-2xl font-serif text-[17px] leading-relaxed text-muted">{a.excerpt}</p>
       </div>
     </Link>
   );
 }
 
-export function QuestionCard({ a }: { a: Article }) {
+export function Card({ a }: { a: Article }) {
   return (
-    <Link href={`/noutati/${a.slug}`} className="group flex flex-col rounded-2xl border border-line p-6 transition hover:border-fg">
-      <span className="font-mono text-[11px] text-muted">{a.date}</span>
-      <h3 className="mt-3 flex-1 text-[17px] font-medium leading-snug tracking-tight">{a.title}</h3>
-      <span className="mt-5 text-sm text-accent">Citește răspunsul →</span>
+    <Link href={`/noutati/${a.slug}`} className="group block">
+      <div className="photo aspect-[3/2]"><img src={a.img} alt="" /></div>
+      <div className="pt-3">
+        <Meta a={a} />
+        <h3 className="headline mt-1.5 text-lg group-hover:underline">{a.title}</h3>
+        {a.excerpt && <p className="mt-2 text-sm leading-relaxed text-muted">{a.excerpt}</p>}
+      </div>
+    </Link>
+  );
+}
+
+export function Row({ a, thumb = true }: { a: Article; thumb?: boolean }) {
+  return (
+    <Link href={`/noutati/${a.slug}`} className="group flex gap-4 border-b border-line py-4 last:border-b-0">
+      {thumb && <div className="photo h-[72px] w-[108px] shrink-0"><img src={a.img} alt="" /></div>}
+      <div className="min-w-0">
+        <Meta a={a} />
+        <h3 className="headline mt-1 text-[17px] group-hover:underline">{a.title}</h3>
+      </div>
+    </Link>
+  );
+}
+
+export function Numbered({ a, n }: { a: Article; n: number }) {
+  return (
+    <Link href={`/noutati/${a.slug}`} className="group flex gap-4 border-b border-line py-4 last:border-b-0">
+      <span className="font-serif text-3xl font-semibold leading-none text-gold">{String(n).padStart(2, "0")}</span>
+      <div className="min-w-0">
+        <h3 className="headline text-[17px] group-hover:underline">{a.title}</h3>
+        <Meta a={a} />
+      </div>
+    </Link>
+  );
+}
+
+export function Question({ a }: { a: Article }) {
+  return (
+    <Link href={`/noutati/${a.slug}`} className="group relative block aspect-[4/5] overflow-hidden bg-brand-deep text-white">
+      <img src={a.img} alt="" className="absolute inset-0 h-full w-full object-cover opacity-60 transition duration-500 group-hover:scale-105 group-hover:opacity-70" />
+      <div className="absolute inset-0 bg-gradient-to-t from-brand-deep via-brand-deep/40 to-transparent" />
+      <div className="absolute inset-0 flex flex-col justify-end p-5">
+        <span className="mb-2 inline-block w-fit border-b-2 border-accent pb-1 text-[11px] font-bold uppercase tracking-[0.1em] text-accent">{a.date}</span>
+        <h3 className="headline text-lg">{a.title}</h3>
+      </div>
     </Link>
   );
 }
