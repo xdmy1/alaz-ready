@@ -21,7 +21,7 @@ export default function Abonarea() {
       </section>
       <section className="container-x border-t border-line py-12">
         <div className="grid gap-8 lg:grid-cols-[260px_1fr]">
-          <div className="section-title lg:border-b-0"><h2>Note</h2></div>
+          <h2 className="headline text-[26px]">Note</h2>
           <ol className="divide-y divide-line">
             {notes.map((n, i) => (
               <li key={i} className="flex gap-5 py-4 text-[15px] leading-relaxed"><span className="font-serif text-2xl font-semibold leading-none text-gold">{i + 1}.</span>{n}</li>

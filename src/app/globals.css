@@ -49,14 +49,14 @@ html { color-scheme: light; }
 html.dark { color-scheme: dark; }
 body { background: var(--bg); color: var(--fg); }
 
-.container-x { @apply mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8; }
+.container-x { @apply mx-auto w-full max-w-6xl px-5 sm:px-8; }
 
 /* Titlu de secțiune ca pe site: majuscule bold + linie aurie */
-.section-title { @apply flex items-baseline justify-between gap-4 border-b-2 border-gold pb-2; }
-.section-title h2 { @apply font-sans text-[13px] font-bold uppercase tracking-[0.12em] text-brand; }
-.section-title a { @apply text-xs text-muted hover:text-fg; }
+.section-title { @apply flex items-baseline justify-between gap-4 border-b border-line pb-3; }
+.section-title h2 { @apply font-serif text-[26px] font-semibold tracking-[-0.01em] text-fg; }
+.section-title a { @apply text-sm text-muted hover:text-fg; }
 
-.headline { @apply font-serif font-semibold leading-[1.12] tracking-[-0.01em]; }
+.headline { @apply font-serif font-semibold leading-[1.18] tracking-[-0.01em]; }
 .kicker { @apply text-[11px] font-bold uppercase tracking-[0.1em] text-brand; }
 .meta { @apply text-xs text-muted; }
 
