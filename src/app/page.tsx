@@ -14,27 +14,25 @@ export default function Home() {
         <div>
           <div className="section-title"><h2>Noutăți</h2><Link href="/noutati">Toate noutățile</Link></div>
           <div className="mt-2">{rest.slice(0, 3).map((a) => <Row key={a.slug} a={a} thumb={false} />)}</div>
+          <div className="mt-8"><Newsletter /></div>
         </div>
       </section>
 
-      {/* Numărul curent + newsletter, pe fundal deschis */}
+      {/* Numărul curent, pe fundal deschis */}
       <section className="bg-bg-soft">
-        <div className="container-x grid gap-12 py-16 lg:grid-cols-[1fr_360px] lg:gap-20">
-          <div className="flex flex-col gap-8 sm:flex-row sm:items-center">
-            <Cover className="w-44 shrink-0 shadow-xl sm:w-52" />
-            <div>
-              <p className="kicker">Numărul curent</p>
-              <h2 className="headline mt-2 text-3xl">{issue.month}</h2>
-              <ul className="mt-5 space-y-2 text-[15px] text-muted">
-                {issue.contents.slice(0, 4).map((c) => <li key={c}>{c}</li>)}
-              </ul>
-              <div className="mt-7 flex flex-wrap gap-3">
-                <Link href="/revista" className="btn-navy">Citește numărul</Link>
-                <Link href="/revista#arhiva" className="btn-outline">Arhiva</Link>
-              </div>
+        <div className="container-x flex flex-col gap-8 py-16 sm:flex-row sm:items-center sm:gap-12">
+          <Cover className="w-44 shrink-0 shadow-xl sm:w-52" />
+          <div className="min-w-0 flex-1">
+            <p className="kicker">Numărul curent</p>
+            <h2 className="headline mt-2 text-3xl">{issue.month}</h2>
+            <ul className="mt-5 grid gap-x-10 gap-y-2 text-[15px] text-muted md:grid-cols-2">
+              {issue.contents.slice(0, 4).map((c) => <li key={c} className="border-l-2 border-accent pl-3">{c}</li>)}
+            </ul>
+            <div className="mt-7 flex flex-wrap gap-3">
+              <Link href="/revista" className="btn-navy">Citește numărul</Link>
+              <Link href="/revista#arhiva" className="btn-outline">Arhiva</Link>
             </div>
           </div>
-          <Newsletter />
         </div>
       </section>
 
