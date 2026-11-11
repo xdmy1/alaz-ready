@@ -1,8 +1,6 @@
 @import "tailwindcss";
 @import "@fontsource-variable/source-serif-4/opsz.css";
 
-@custom-variant dark (&:where(.dark, .dark *));
-
 /* Paleta site-ului: bleumarin #10152c / #244265, galben #eac435, auriu #be9546 */
 :root {
   --bg: #ffffff;
@@ -15,18 +13,6 @@
   --accent: #eac435;
   --accent-fg: #10152c;
   --gold: #be9546;
-}
-.dark {
-  --bg: #10152c;
-  --bg-soft: #171d38;
-  --fg: #f4f5f9;
-  --muted: #a5abc2;
-  --line: #2a3357;
-  --brand: #eac435;
-  --brand-deep: #0a0e20;
-  --accent: #eac435;
-  --accent-fg: #10152c;
-  --gold: #d7b45a;
 }
 
 @theme inline {
@@ -46,7 +32,6 @@
 }
 
 html { color-scheme: light; }
-html.dark { color-scheme: dark; }
 body { background: var(--bg); color: var(--fg); }
 
 .container-x { @apply mx-auto w-full max-w-6xl px-5 sm:px-8; }
@@ -64,7 +49,6 @@ body { background: var(--bg); color: var(--fg); }
 .btn-yellow { @apply inline-flex h-10 items-center justify-center px-4 text-[13px] font-bold uppercase tracking-[0.08em] transition bg-accent text-accent-fg hover:brightness-95; }
 .btn-navy { @apply inline-flex h-10 items-center justify-center px-4 text-[13px] font-bold uppercase tracking-[0.08em] transition bg-brand-deep text-white hover:bg-brand; }
 .btn-outline { @apply inline-flex h-10 items-center justify-center px-4 text-[13px] font-bold uppercase tracking-[0.08em] transition border border-fg text-fg hover:bg-fg hover:text-bg; }
-.dark .btn-outline:hover { color: var(--bg); }
 
 .link-quiet { @apply text-muted transition-colors hover:text-fg; }
 .photo { @apply relative overflow-hidden bg-bg-soft; }

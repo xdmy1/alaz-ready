@@ -3,7 +3,6 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
 import Logo from "./Logo";
-import ThemeToggle from "./ThemeToggle";
 
 const links = [
   { href: "/revista", label: "Revista" },
@@ -38,7 +37,6 @@ export default function Nav() {
         </nav>
         <div className="flex items-center gap-1">
           <button onClick={() => setSearch(true)} aria-label="Caută" className="grid h-10 w-10 place-items-center text-white/80 hover:text-white"><Search /></button>
-          <ThemeToggle />
           <button className="hidden h-10 px-2 text-[11px] font-bold uppercase tracking-wider text-white/70 hover:text-white lg:block">Ro / Ru</button>
           <Link href="/cont" className="hidden px-3 text-[13px] text-white/80 hover:text-white sm:block">Cabinet</Link>
           <span className="ml-2 hidden sm:block"><Link href="/abonarea" className="btn-yellow h-9 whitespace-nowrap">Abonarea 2027</Link></span>
