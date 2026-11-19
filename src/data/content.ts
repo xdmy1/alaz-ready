@@ -69,7 +69,15 @@ export const plans = [
 export const notes = [
   "Pachetul Print include 12 numere ale revistei în versiunea tipărită, inclusiv Codul fiscal actualizat.",
   "Abonaților la oricare dintre pachete li se oferă o reducere de 10% de la taxa de participare la seminarele și webinarele organizate de „Contabil-Service” SRL.",
-  "Factura se emite pe datele companiei. Accesul se activează în ziua achitării.",
+  "Contul spre plată se emite pe datele companiei. Accesul se activează în ziua achitării.",
 ];
 
 export const allArticles = [...news, ...consultant, ...mostRead];
+
+/* Instruire: seminare și webinare organizate de „Contabil-Service” SRL. Titlurile sunt exemple pentru concept. */
+export const trainings = [
+  { day: "26", month: "noi", date: "26 noiembrie 2026", time: "09:00 – 12:45", format: "Webinar · Zoom", title: "Închiderea anului fiscal 2026: verificări înainte de raportare", img: "/img/rubrica-55.jpg" },
+  { day: "3", month: "dec", date: "3 decembrie 2026", time: "09:00 – 12:45", format: "Webinar · Zoom", title: "Salarizare 2027: ce se schimbă la calculul contribuțiilor", img: "/img/rubrica-62.jpg" },
+  { day: "10", month: "dec", date: "10 decembrie 2026", time: "10:00 – 16:00", format: "Seminar · Chișinău", title: "TVA în tranzacțiile transfrontaliere: cazuri practice", img: "/img/rubrica-14.jpg" },
+  { day: "17", month: "dec", date: "17 decembrie 2026", time: "09:00 – 12:45", format: "Webinar · Zoom", title: "Situațiile financiare pe 2026: întocmire și prezentare", img: "/img/rubrica-42.jpg" },
+];

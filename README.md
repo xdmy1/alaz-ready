@@ -7,6 +7,6 @@ npm install
 npm run dev
 ```
 
-Pagini: `/`, `/noutati`, `/noutati/[slug]`, `/consultant`, `/revista`, `/abonarea`, `/la-indemana`, `/cont`.
+Pagini: `/`, `/revista`, `/consultant`, `/instruire`, `/la-indemana` (Util), `/noutati`, `/noutati/[slug]`, `/abonarea`, `/cont`.
 
 Deploy: Vercel, din branch-ul `main`.

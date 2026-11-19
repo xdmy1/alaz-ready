@@ -17,7 +17,7 @@ export default function Abonarea() {
       </section>
       <section className="container-x py-14 lg:py-16">
         <Pricing />
-        <p className="mt-6 text-center text-xs text-muted">Prețurile includ TVA. Factura fiscală se emite pe datele companiei.</p>
+        <p className="mt-6 text-center text-xs text-muted">Prețurile includ TVA. Contul spre plată se emite pe datele companiei.</p>
       </section>
       <section className="container-x border-t border-line py-12">
         <div className="grid gap-8 lg:grid-cols-[260px_1fr]">

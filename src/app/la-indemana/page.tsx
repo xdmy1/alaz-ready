@@ -13,7 +13,7 @@ export default function LaIndemana() {
     <>
       <section className="border-b border-line bg-bg-soft">
         <div className="container-x py-12">
-          <p className="kicker">Întotdeauna la îndemână</p>
+          <p className="kicker">Util · Întotdeauna la îndemână</p>
           <h1 className="headline mt-3 text-4xl sm:text-5xl">Baza normativă și instrumente de lucru</h1>
           <div className="mt-6 flex max-w-xl border border-line bg-bg">
             <input placeholder="Număr, titlu sau cuvânt-cheie…" className="h-12 flex-1 bg-transparent px-4 text-sm outline-none placeholder:text-muted" />
