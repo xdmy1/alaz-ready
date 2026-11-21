@@ -9,6 +9,7 @@ export default function Consultant() {
           <p className="kicker">Consultant+</p>
           <h1 className="headline mt-3 max-w-2xl text-4xl sm:text-5xl">Întrebări de contabilitate, cu răspuns argumentat.</h1>
           <p className="mt-4 max-w-xl font-serif text-lg text-muted">Articole operative publicate între numerele revistei, plus traduceri rom.–rus. ale materialelor de bază. Disponibile abonaților.</p>
+          <div className="mt-7 flex flex-wrap gap-3"><a href="/abonarea" className="btn-yellow">Obține acces</a><a href="/cont" className="btn-outline">Am cont</a></div>
         </div>
       </section>
       <section className="container-x py-10">

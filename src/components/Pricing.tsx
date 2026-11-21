@@ -23,7 +23,7 @@ export default function Pricing() {
             ))}
           </ul>
           <div className="px-8 pb-8">
-            <button className={`${p.featured ? "btn-yellow" : "btn-outline"} h-12 w-full`}>Obține factura</button>
+            <button className={`${p.featured ? "btn-yellow" : "btn-outline"} h-12 w-full`}>Cont spre plată</button>
           </div>
         </div>
       ))}

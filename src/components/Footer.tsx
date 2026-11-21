@@ -3,8 +3,8 @@ import Logo from "./Logo";
 
 const cols = [
   { title: "Revista", items: ["Numărul curent", "Arhiva", "Rubrici", "Consultant+", "Noutăți"] },
-  { title: "Resurse", items: ["Baza normativă", "Codul fiscal", "Planul de conturi", "SNC", "Calendarul contribuabilului"] },
-  { title: "Editura", items: ["Despre ediție", "Redacția revistei", "Autorii noștri", "Abonarea", "Contacte"] },
+  { title: "Util", items: ["Baza normativă", "Codul fiscal", "Planul de conturi", "SNC", "Calendarul contribuabilului"] },
+  { title: "Editura", items: ["Despre ediție", "Redacția revistei", "Autorii noștri", "Instruire", "Abonarea", "Contacte"] },
 ];
 
 export default function Footer() {
